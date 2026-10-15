@@ -1,0 +1,17 @@
+.privacy-banner[hidden]{display:none!important}
+.privacy-banner{position:fixed;right:22px;bottom:22px;z-index:1000;width:min(460px,calc(100vw - 44px));padding:22px;background:#fffef9;border:1px solid #b8c4b2;box-shadow:0 20px 60px #1b29233d;animation:privacy-enter .35s ease-out}
+.privacy-banner-copy strong{display:block;margin-bottom:8px;font-size:15px;letter-spacing:-.035em}
+.privacy-banner-copy p{margin:0;color:#5d665c;font-size:12px;line-height:1.6}
+.privacy-banner-actions{display:flex;gap:8px;margin-top:19px}
+.privacy-button{min-height:42px;flex:1;padding:10px 13px;border:1px solid var(--forest);border-radius:2px;font:800 11px var(--font);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.privacy-button:hover{transform:translateY(-2px)}
+.privacy-button-primary{background:var(--forest);color:#fff}
+.privacy-button-primary:hover{background:#3a5040}
+.privacy-button-secondary{background:transparent;color:var(--forest)}
+.privacy-button-secondary:hover{background:#e8ecdf}
+.privacy-button:focus-visible,.privacy-settings:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
+.privacy-settings{padding:0;border:0;background:none;color:var(--ink);font:inherit;text-transform:inherit;letter-spacing:inherit;cursor:pointer}
+.privacy-settings:hover{text-decoration:underline;text-underline-offset:3px}
+@keyframes privacy-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.privacy-banner{right:10px;bottom:10px;width:calc(100vw - 20px);padding:18px}.privacy-banner-actions{flex-direction:column}.privacy-button{width:100%}}
+@media(prefers-reduced-motion:reduce){.privacy-banner{animation:none}.privacy-button{transition:none}.privacy-button:hover{transform:none}}

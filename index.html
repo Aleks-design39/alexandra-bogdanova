@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="enhancements.css" />
     <link rel="stylesheet" href="conversion.css" />
     <link rel="stylesheet" href="hero-positions.css" />
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="c8fc7d59-a947-4c8f-ac69-d444d7c3cddf"></script>
+    <link rel="stylesheet" href="privacy.css" />
   </head>
   <body>
     <div class="page-shell">
@@ -77,9 +77,20 @@
         </section>
       </main>
 
-      <footer class="site-footer"><span data-field="footerName">Богданова Александра Дмитриевна</span><span>Проекты · Управление · Дизайн</span><a href="#top">Наверх ↑</a></footer>
+      <footer class="site-footer"><span data-field="footerName">Богданова Александра Дмитриевна</span><span>Проекты · Управление · Дизайн</span><button class="privacy-settings" id="privacy-settings" type="button">Настройки статистики</button><a href="#top">Наверх ↑</a></footer>
     </div>
+    <aside class="privacy-banner" id="privacy-banner" role="region" aria-label="Настройки статистики" hidden>
+      <div class="privacy-banner-copy">
+        <strong>Статистика сайта</strong>
+        <p>Можно разрешить анонимный подсчёт посещений и переходов. Для этого используется Umami без файлов cookie.</p>
+      </div>
+      <div class="privacy-banner-actions">
+        <button type="button" id="privacy-decline" class="privacy-button privacy-button-secondary">Не разрешать</button>
+        <button type="button" id="privacy-accept" class="privacy-button privacy-button-primary">Разрешить</button>
+      </div>
+    </aside>
     <script src="content.js?v=2"></script>
     <script src="app.js?v=3"></script>
+    <script src="privacy.js?v=1"></script>
   </body>
 </html>

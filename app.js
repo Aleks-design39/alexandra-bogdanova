@@ -48,16 +48,16 @@
   const projects = document.getElementById("project-list");
   (data.projects || []).forEach(item => {
     const row = document.createElement("article"); row.className = "project-row";
-    const imageLink = document.createElement("a"); imageLink.href = item.url; imageLink.target = "_blank"; imageLink.rel = "noopener noreferrer"; imageLink.className = "project-image-link"; imageLink.setAttribute("aria-label", `Открыть проект ${item.title} на Behance`);
+    const imageLink = document.createElement("a"); imageLink.href = item.url; imageLink.target = "_blank"; imageLink.rel = "noopener noreferrer"; imageLink.className = "project-image-link"; imageLink.setAttribute("aria-label", `Открыть проект ${item.title} на Behance`); imageLink.dataset.umamiEvent = `Клик: проект ${item.title}`;
     const image = document.createElement("img"); image.src = item.image; image.alt = item.title; image.loading = "lazy"; image.decoding = "async"; imageLink.append(image);
     const body = document.createElement("div"); body.className = "project-body";
     const category = document.createElement("p"); category.className = "project-category"; category.textContent = item.category;
-    const title = document.createElement("h3"); const titleLink = document.createElement("a"); titleLink.href = item.url; titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; titleLink.textContent = item.title; title.append(titleLink);
+    const title = document.createElement("h3"); const titleLink = document.createElement("a"); titleLink.href = item.url; titleLink.target = "_blank"; titleLink.rel = "noopener noreferrer"; titleLink.textContent = item.title; titleLink.dataset.umamiEvent = `Клик: проект ${item.title}`; title.append(titleLink);
     const description = document.createElement("p"); description.textContent = item.description;
     body.append(category, title, description);
     row.append(imageLink, body);
     if (item.url) {
-      const link = document.createElement("a"); link.href = item.url; link.target = "_blank"; link.rel = "noopener noreferrer"; link.className = "project-arrow"; link.setAttribute("aria-label", `Открыть проект ${item.title}`); link.textContent = "↗"; row.append(link);
+      const link = document.createElement("a"); link.href = item.url; link.target = "_blank"; link.rel = "noopener noreferrer"; link.className = "project-arrow"; link.setAttribute("aria-label", `Открыть проект ${item.title}`); link.textContent = "↗"; link.dataset.umamiEvent = `Клик: проект ${item.title}`; row.append(link);
     }
     projects.append(row);
   });
@@ -65,6 +65,8 @@
   const contacts = document.getElementById("contact-links");
   (data.contacts || []).forEach(item => {
     const link = document.createElement("a"); link.href = item.url; link.className = "contact-link";
+    if (item.label === "Telegram") link.dataset.umamiEvent = "Клик: Telegram";
+    if (item.label === "Behance") link.dataset.umamiEvent = "Клик: Behance";
     if (!item.url.startsWith("mailto:") && !item.url.startsWith("tel:")) { link.target = "_blank"; link.rel = "noopener noreferrer"; }
     const label = document.createElement("span"); label.textContent = item.label;
     const arrow = document.createElement("span"); arrow.setAttribute("aria-hidden", "true"); arrow.textContent = "↗";

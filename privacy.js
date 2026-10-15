@@ -1,5 +1,5 @@
 (() => {
-  const storageKey = "ab-analytics-consent-v1";
+  const storageKey = "ab-analytics-consent-v2";
   const websiteId = "c8fc7d59-a947-4c8f-ac69-d444d7c3cddf";
   const banner = document.getElementById("privacy-banner");
   const settings = document.getElementById("privacy-settings");

@@ -33,6 +33,46 @@
     body.append(title, description); row.append(number, body); valueList.append(row);
   });
 
+  const detailDialog = document.getElementById("detail-dialog");
+  const detailClose = document.getElementById("detail-close");
+  let detailTrigger;
+  const openDetails = (item, trigger) => {
+    const details = item.details;
+    if (!details) return;
+    detailTrigger = trigger;
+    document.getElementById("detail-period").textContent = item.period;
+    document.getElementById("detail-title").textContent = item.role;
+    document.getElementById("detail-company").textContent = item.company;
+    document.getElementById("detail-lead").textContent = details.lead;
+
+    const metrics = document.getElementById("detail-metrics");
+    metrics.replaceChildren();
+    (details.metrics || []).forEach(metric => {
+      const card = document.createElement("div"); card.className = "detail-metric";
+      const value = document.createElement("strong"); value.textContent = metric.value;
+      const label = document.createElement("span"); label.textContent = metric.label;
+      card.append(value, label); metrics.append(card);
+    });
+
+    const sections = document.getElementById("detail-sections");
+    sections.replaceChildren();
+    (details.sections || []).forEach(section => {
+      const block = document.createElement("section"); block.className = "detail-section";
+      const heading = document.createElement("h3"); heading.textContent = section.title;
+      const list = document.createElement("ul");
+      section.items.forEach(text => {
+        const point = document.createElement("li"); point.textContent = text; list.append(point);
+      });
+      block.append(heading, list); sections.append(block);
+    });
+    detailDialog.scrollTop = 0;
+    detailDialog.showModal();
+    detailClose.focus();
+  };
+  detailClose.addEventListener("click", () => detailDialog.close());
+  detailDialog.addEventListener("click", event => { if (event.target === detailDialog) detailDialog.close(); });
+  detailDialog.addEventListener("close", () => detailTrigger?.focus());
+
   const experience = document.getElementById("experience-list");
   (data.experience || []).forEach(item => {
     const row = document.createElement("article");
@@ -42,7 +82,17 @@
     const title = document.createElement("h3"); title.textContent = item.role;
     const company = document.createElement("p"); company.className = "timeline-company"; company.textContent = item.company;
     const description = document.createElement("p"); description.className = "timeline-description"; description.textContent = item.description;
-    body.append(title, company, description); row.append(period, body); experience.append(row);
+    body.append(title, company, description);
+    if (item.details) {
+      const more = document.createElement("button");
+      more.type = "button"; more.className = "timeline-more";
+      more.textContent = "Подробнее ↗";
+      more.setAttribute("aria-label", `Подробнее о работе: ${item.company}`);
+      more.dataset.umamiEvent = item.company.includes("Хорошевская") ? "Клик: подробности школы" : "Клик: подробности MaxPrint";
+      more.addEventListener("click", () => openDetails(item, more));
+      body.append(more);
+    }
+    row.append(period, body); experience.append(row);
   });
 
   const projects = document.getElementById("project-list");

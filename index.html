@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="conversion.css" />
     <link rel="stylesheet" href="hero-positions.css?v=2" />
     <link rel="stylesheet" href="privacy.css" />
+    <link rel="stylesheet" href="details.css" />
   </head>
   <body>
     <div class="page-shell">
@@ -89,8 +90,18 @@
         <button type="button" id="privacy-accept" class="privacy-button privacy-button-primary">Разрешить</button>
       </div>
     </aside>
-    <script src="content.js?v=5"></script>
-    <script src="app.js?v=3"></script>
+    <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
+      <div class="detail-shell">
+        <div class="detail-topline"><span id="detail-period"></span><button class="detail-close" id="detail-close" type="button" aria-label="Закрыть подробности">×</button></div>
+        <h2 id="detail-title"></h2>
+        <p class="detail-company" id="detail-company"></p>
+        <p class="detail-lead" id="detail-lead"></p>
+        <div class="detail-metrics" id="detail-metrics"></div>
+        <div class="detail-sections" id="detail-sections"></div>
+      </div>
+    </dialog>
+    <script src="content.js?v=6"></script>
+    <script src="app.js?v=4"></script>
     <script src="privacy.js?v=2"></script>
   </body>
 </html>

@@ -33,7 +33,7 @@ window.resumeContent = {
     { number: "02", title: "1984", category: "Концепция книжного дизайна", description: "Визуальная концепция оформления книги Джорджа Оруэлла.", image: "assets/1984-book.jpg", url: "https://www.behance.net/gallery/257031065/1984-Book-Design-Concept" },
     { number: "03", title: "NORTH", category: "Айдентика студии", description: "Фирменный стиль для студии архитектуры и интерьера.", image: "assets/north-identity.jpg", url: "https://www.behance.net/gallery/254619739/NORTH-Architecture-Interior-Studio-Identity" }
   ],
-  contactIntro: "Если вашей команде нужен руководитель проектов, который организует работу и учитывает задачи бизнеса и аудитории, напишите мне в Telegram.",
+  contactIntro: "Если вашей команде нужен руководитель проектов, помощник руководителя или дизайнер с опытом координации задач и работы с аудиторией, напишите мне в Telegram.",
   contacts: [
     { label: "Telegram", url: "https://t.me/Dmitrievna_DE" },
     { label: "Behance", url: "https://www.behance.net/alek_szim" }

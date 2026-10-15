@@ -4,8 +4,8 @@
   const set = (name, value) => document.querySelectorAll(`[data-field="${name}"]`).forEach(el => { el.textContent = value || ""; });
   ["name", "heroLine1", "heroProof", "shortName", "initials", "role", "location", "intro", "about", "contactIntro"].forEach(key => set(key, data[key]));
   set("footerName", data.fullName);
-  document.title = `${data.fullName} — ${data.role}`;
-  document.querySelector('meta[name="description"]').content = `${data.fullName}: ${data.role}. Опыт управления, результаты, портфолио и контакты.`;
+  document.title = `${data.fullName} — руководитель проектов, помощник руководителя, дизайнер`;
+  document.querySelector('meta[name="description"]').content = `${data.fullName}: руководитель проектов, помощник руководителя, графический дизайнер. Опыт управления, результаты, портфолио и контакты.`;
 
   const skills = document.getElementById("skills");
   (data.skills || []).forEach(skill => {

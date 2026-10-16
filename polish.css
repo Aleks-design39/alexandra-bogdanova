@@ -13,4 +13,3 @@
 @media(max-width:800px){.hero h1{font-size:clamp(42px,6.8vw,62px)}.tool-row{grid-template-columns:160px 1fr}.hero-results .proof-row strong{font-size:35px}}
 @media(max-width:600px){.hero h1{font-size:clamp(34px,8.6vw,51px)}.hero-role{font-size:15px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%;font-size:13px}.hero-results .proof-row strong{font-size:30px}.tool-row{grid-template-columns:1fr;gap:8px;padding:22px 0}.conditions-body dl>div{grid-template-columns:1fr;gap:5px}.conditions-body dd{font-size:17px}.conditions-body>.button{width:100%}.header-link span{margin-left:7px}}
 @media(max-width:400px){.hero-results .proof-row strong{font-size:25px}.hero-results{padding:23px 18px}.hero-results .proof-list{gap:22px 14px}.results-heading h2{font-size:16px}.hero h1{font-size:clamp(28px,8.3vw,34px)}}
-

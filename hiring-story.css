@@ -15,3 +15,14 @@
 .hiring-story-continuity p{font-size:14px;line-height:1.72;color:#435148;margin:0}
 @media(max-width:1050px){.hiring-story-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.hiring-story-step:nth-child(3){border-left:0;border-top:1px solid #cbd5c5;padding-left:0}.hiring-story-step:nth-child(4){border-top:1px solid #cbd5c5}}
 @media(max-width:650px){.hiring-story{margin:0 3% 14px;padding:46px 6% 42px;border-radius:18px;scroll-margin-top:18px}.hiring-story-heading{margin-bottom:30px}.hiring-story-heading h2{font-size:clamp(32px,8vw,44px)}.hiring-story-heading p{font-size:14px}.hiring-story-steps{grid-template-columns:1fr}.hiring-story-step,.hiring-story-step+.hiring-story-step,.hiring-story-step:nth-child(3),.hiring-story-step:nth-child(4){border-left:0;border-top:1px solid #cbd5c5;padding:22px 0}.hiring-story-step:first-child{border-top:0}.hiring-story-marker{margin-bottom:15px}.hiring-story-step h3{font-size:19px}.hiring-story-continuity{grid-template-columns:1fr;gap:10px;margin-top:22px;padding:23px 22px}.hiring-story-continuity p{font-size:13px}}
+.story-tab{display:none;color:var(--forest);font-size:12px;font-weight:800;white-space:nowrap;border-bottom:1px solid currentColor;padding-bottom:5px}
+.story-tab:hover{opacity:.6}
+@media(max-width:800px){.story-tab{display:inline-block}.site-header{gap:12px}.wordmark{margin-right:auto}}
+@media(max-width:420px){.story-tab{font-size:10px}.site-header .wordmark{font-size:13px}.site-header .wordmark-dot{width:13px;height:13px}.site-header .header-link{font-size:11px}}
+.story-page .hiring-story{margin-top:56px;margin-bottom:56px}
+.story-page .hiring-story-heading h1{font-size:clamp(34px,4vw,58px);line-height:1.12;letter-spacing:-.065em;margin:0 0 18px}
+.story-page .hiring-story-heading h1 em{font-weight:400;color:#41604a}
+.story-page .hiring-story-step h2{font-size:20px;line-height:1.25;letter-spacing:-.045em;margin:0 0 11px}
+.story-page .hiring-story-return{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.story-page .hiring-story-return .button-resume{background:transparent;border:1px solid #a4b09b;color:var(--forest)}
+@media(max-width:650px){.story-page .hiring-story{margin-top:24px;margin-bottom:30px}.story-page .hiring-story-heading h1{font-size:clamp(32px,8vw,44px)}.story-page .hiring-story-step h2{font-size:19px}.story-page .hiring-story-return .button{width:100%}}

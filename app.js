@@ -7,14 +7,6 @@
   document.title = `${data.fullName} — операционный руководитель`;
   document.querySelector('meta[name="description"]').content = `${data.fullName}: координация команды из 45 человек, закупки, работа с родителями и отчётность. Опыт и результаты.`;
 
-  const skills = document.getElementById("skills");
-  (data.skills || []).forEach(skill => {
-    const item = document.createElement("span");
-    item.className = "skill";
-    item.textContent = skill;
-    skills.append(item);
-  });
-
   const proof = document.getElementById("proof-list");
   (data.proof || []).forEach(item => {
     const row = document.createElement("div"); row.className = "proof-row";

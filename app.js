@@ -33,6 +33,20 @@
     body.append(title, description); row.append(number, body); valueList.append(row);
   });
 
+  const caseList = document.getElementById("case-list");
+  (data.cases || []).forEach(item => {
+    const card = document.createElement("article"); card.className = "case-card";
+    const number = document.createElement("span"); number.className = "case-number"; number.textContent = item.number;
+    const title = document.createElement("h3"); title.textContent = item.title;
+    card.append(number, title);
+    for (const [label, value] of [["Ситуация", item.situation], ["Что сделала", item.action], ["Результат", item.result]]) {
+      const line = document.createElement("p");
+      const strong = document.createElement("strong"); strong.textContent = `${label}: `;
+      line.append(strong, document.createTextNode(value)); card.append(line);
+    }
+    caseList.append(card);
+  });
+
   const detailDialog = document.getElementById("detail-dialog");
   const detailClose = document.getElementById("detail-close");
   let detailTrigger;
@@ -127,7 +141,7 @@
   }
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const animated = document.querySelectorAll(".section-heading, .about-body, .value-row, .timeline-row, .project-row, .contact h2, .contact>p, .contact-links");
+  const animated = document.querySelectorAll(".section-heading, .about-body, .value-row, .case-card, .timeline-row, .project-row, .contact h2, .contact>p, .contact-links");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;

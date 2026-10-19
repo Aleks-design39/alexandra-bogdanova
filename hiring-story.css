@@ -1,0 +1,17 @@
+.hiring-story{max-width:1440px;margin:0 auto 18px;padding:72px 5.5% 64px;background:#f8f8f4;border:1px solid #dce2d4;border-radius:24px;box-shadow:0 18px 50px #2b49370c;scroll-margin-top:96px}
+.hiring-story-heading{max-width:880px;margin-bottom:44px}
+.hiring-story-heading .section-number{display:block;color:#557154;margin-bottom:18px}
+.hiring-story-heading h2{font-size:clamp(34px,4vw,58px);line-height:1.12;letter-spacing:-.065em;margin:0 0 18px}
+.hiring-story-heading h2 em{font-weight:400;color:#41604a}
+.hiring-story-heading p{font-size:15px;line-height:1.7;color:#5a685d;max-width:720px;margin:0}
+.hiring-story-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #cbd5c5;border-bottom:1px solid #cbd5c5}
+.hiring-story-step{position:relative;padding:28px 26px 30px 0}
+.hiring-story-step+.hiring-story-step{padding-left:26px;border-left:1px solid #cbd5c5}
+.hiring-story-marker{display:inline-block;padding:8px 11px;margin-bottom:22px;border-radius:999px;background:#e3edce;color:#314b36;font-size:11px;font-weight:800;letter-spacing:.02em}
+.hiring-story-step h3{font-size:20px;line-height:1.25;letter-spacing:-.045em;margin:0 0 11px}
+.hiring-story-step p{font-size:13px;line-height:1.7;color:#526057;margin:0}
+.hiring-story-continuity{display:grid;grid-template-columns:minmax(190px,.85fr) minmax(0,2.3fr);gap:35px;align-items:start;margin-top:30px;padding:25px 28px;border-radius:14px;background:#e9efdd}
+.hiring-story-continuity strong{font-size:17px;line-height:1.35;letter-spacing:-.035em;color:#314b36}
+.hiring-story-continuity p{font-size:14px;line-height:1.72;color:#435148;margin:0}
+@media(max-width:1050px){.hiring-story-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.hiring-story-step:nth-child(3){border-left:0;border-top:1px solid #cbd5c5;padding-left:0}.hiring-story-step:nth-child(4){border-top:1px solid #cbd5c5}}
+@media(max-width:650px){.hiring-story{margin:0 3% 14px;padding:46px 6% 42px;border-radius:18px;scroll-margin-top:18px}.hiring-story-heading{margin-bottom:30px}.hiring-story-heading h2{font-size:clamp(32px,8vw,44px)}.hiring-story-heading p{font-size:14px}.hiring-story-steps{grid-template-columns:1fr}.hiring-story-step,.hiring-story-step+.hiring-story-step,.hiring-story-step:nth-child(3),.hiring-story-step:nth-child(4){border-left:0;border-top:1px solid #cbd5c5;padding:22px 0}.hiring-story-step:first-child{border-top:0}.hiring-story-marker{margin-bottom:15px}.hiring-story-step h3{font-size:19px}.hiring-story-continuity{grid-template-columns:1fr;gap:10px;margin-top:22px;padding:23px 22px}.hiring-story-continuity p{font-size:13px}}

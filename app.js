@@ -35,15 +35,45 @@
 
   const caseList = document.getElementById("case-list");
   (data.cases || []).forEach(item => {
-    const card = document.createElement("article"); card.className = "case-card";
+    const card = document.createElement("article"); card.className = `case-card case-card--${item.visual?.type || "plain"}`;
     const number = document.createElement("span"); number.className = "case-number"; number.textContent = item.number;
     const title = document.createElement("h3"); title.textContent = item.title;
     card.append(number, title);
-    for (const [label, value] of [["Ситуация", item.situation], ["Что сделала", item.action], ["Результат", item.result]]) {
+    if (item.visual) {
+      const visual = document.createElement("div");
+      visual.className = `case-visual case-visual--${item.visual.type}`;
+      visual.setAttribute("role", "group");
+      visual.setAttribute("aria-label", item.visual.label);
+      if (item.visual.type === "flow") {
+        item.visual.steps.forEach((step, index) => {
+          const cell = document.createElement("div"); cell.className = "case-flow-step";
+          const marker = document.createElement("span"); marker.className = "case-flow-marker"; marker.textContent = String(index + 1).padStart(2, "0");
+          const stepTitle = document.createElement("strong"); stepTitle.textContent = step.title;
+          const note = document.createElement("span"); note.textContent = step.note;
+          cell.append(marker, stepTitle, note); visual.append(cell);
+        });
+      } else if (item.visual.type === "roles") {
+        item.visual.roles.forEach((role, index) => {
+          const cell = document.createElement("div"); cell.className = "case-role";
+          const marker = document.createElement("span"); marker.className = "case-role-marker"; marker.textContent = String(index + 1).padStart(2, "0");
+          const roleTitle = document.createElement("strong"); roleTitle.textContent = role.title;
+          const list = document.createElement("ul");
+          role.items.forEach(text => { const li = document.createElement("li"); li.textContent = text; list.append(li); });
+          cell.append(marker, roleTitle, list); visual.append(cell);
+        });
+      }
+      card.append(visual);
+    }
+    const story = document.createElement("div"); story.className = "case-story";
+    for (const [label, value] of [["Ситуация", item.situation], ["Что сделала", item.action]]) {
       const line = document.createElement("p");
       const strong = document.createElement("strong"); strong.textContent = `${label}: `;
-      line.append(strong, document.createTextNode(value)); card.append(line);
+      line.append(strong, document.createTextNode(value)); story.append(line);
     }
+    const outcome = document.createElement("p"); outcome.className = "case-outcome";
+    const outcomeLabel = document.createElement("strong"); outcomeLabel.textContent = "Результат: ";
+    outcome.append(outcomeLabel, document.createTextNode(item.result));
+    story.append(outcome); card.append(story);
     caseList.append(card);
   });
 
